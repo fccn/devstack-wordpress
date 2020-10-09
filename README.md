@@ -1,10 +1,39 @@
+# Devstack for NAU WordPress
+This repository contains a development stack for [NAU WordPress theme](https://gitlab.fccn.pt/nau/wp-nau-theme).
+It requires docker and a linux machine.
 
-## Copy wordpress backup to local
+## Prepare environment
+
+Assumption, it should exist a sister folder with name **wp-nau-theme** that contains the [NAU WordPress theme](https://gitlab.fccn.pt/nau/wp-nau-theme).
+
+Copy wordpress backup to local
+```bash
 scp wp01-prd:/nau/ops/wordpress/wordpress.tar.gz .
+```
 
-## Restore the backup
+Restore the backup. It needs to be run using sudo.
+```bash
 sudo make restore
+```
 
-## Stop containers and delete data
+## Development
+Start up the docker containers.
+```bash
+make dev.up
+```
+
+```bash
+make stop.all
+```
+
+## Clean
+
+Stop docker container and delete data
+```bash
 sudo make destroy 
+```
 
+Delete backup
+```bash
+make clean
+```
