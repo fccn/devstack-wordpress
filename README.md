@@ -26,6 +26,10 @@ make dev.up
 make stop.all
 ```
 
+## Security
+Currently, for security purposes the ports are blocked to localhost.
+When everything is up, you can open the browser the page [http://localhost](http://localhost) and see NAU WordPress marketing site.
+
 ## Clean
 
 Stop docker container and delete data
@@ -37,3 +41,4 @@ Delete backup
 ```bash
 make clean
 ```
+
