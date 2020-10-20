@@ -19,7 +19,7 @@ sudo make restore
 ## Development
 Start up the docker containers.
 ```bash
-make dev.up
+make dev.up.all
 ```
 
 ```bash
