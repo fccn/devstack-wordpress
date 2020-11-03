@@ -65,16 +65,8 @@ verify-if-backup-exists:
 dev.up: ## Start containers for development
 	docker-compose -f ${ROOT_DIR}/docker-compose.yml up -d
 
-dev.up.watchers: ## Bring up asset watcher containers
-	docker-compose -f docker-compose-watchers.yml up --build -d
-
-dev.up.all: | dev.up dev.up.watchers ## Bring up all services with host volumes, including watchers
-
 stop.all: | stop.watchers ## Stop all containers
 	docker-compose -f ${ROOT_DIR}/docker-compose.yml down
-
-stop.watchers: ## Stop asset watchers
-	docker-compose -f docker-compose-watchers.yml stop
 
 stop-wordpress:
 	docker container stop ${DOCKER_CONTAINER_WORDPRESS_NAME}

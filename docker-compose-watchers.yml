@@ -1,9 +1,0 @@
-version: "2.1"
-
-services:
-  wordpress_watcher:
-    command: bash -c 'cd /usr/src/app ; gulp'
-    container_name: nau.wordpress.devstack.watcher
-    build: ../wp-nau-theme
-    volumes:
-      - ../wp-nau-theme:/usr/src/app
