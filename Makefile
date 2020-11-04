@@ -65,7 +65,7 @@ verify-if-backup-exists:
 dev.up: ## Start containers for development
 	docker-compose -f ${ROOT_DIR}/docker-compose.yml up -d
 
-stop.all: | stop.watchers ## Stop all containers
+stop.all: ## Stop all containers
 	docker-compose -f ${ROOT_DIR}/docker-compose.yml down
 
 stop-wordpress:

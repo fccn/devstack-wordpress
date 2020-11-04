@@ -42,3 +42,9 @@ Delete backup
 make clean
 ```
 
+## Install more dependencies on the gulpjs run
+```bash
+docker-compose run wordpress_watcher bash
+npm install gulp-sourcemaps
+```
+
