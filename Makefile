@@ -66,7 +66,7 @@ dev.up: ## Start containers for development
 	docker-compose -f ${ROOT_DIR}/docker-compose.yml up -d
 
 stop.all: ## Stop all containers
-	docker-compose -f ${ROOT_DIR}/docker-compose.yml down
+	docker-compose -f ${ROOT_DIR}/docker-compose.yml down --volumes
 
 stop-wordpress:
 	docker container stop ${DOCKER_CONTAINER_WORDPRESS_NAME}
