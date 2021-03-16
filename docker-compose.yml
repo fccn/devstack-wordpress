@@ -47,7 +47,7 @@ services:
     image: nginx:latest
     # networks:
     #   frontend:
-    restart: always
+    #restart: always
     ports:
       - "127.0.0.1:80:80"
     volumes:
