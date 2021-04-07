@@ -1,4 +1,3 @@
-# {{ ansible_managed }}
 # Useful commands for manage docker+wordpress container
 # Run with superuser privileges
 #
