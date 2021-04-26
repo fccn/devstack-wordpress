@@ -30,6 +30,7 @@ services:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: password
       WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DEBUG: 'true'
       WORDPRESS_CONFIG_EXTRA: |
         define('WP_HOME','http://localhost');
         define('WP_SITEURL','http://localhost');
@@ -40,7 +41,11 @@ services:
         define('PATH_CURRENT_SITE', '/');
         define('SITE_ID_CURRENT_SITE', 1);
         define('BLOG_ID_CURRENT_SITE', 1);
-        define('WP_DEBUG', true);
+
+        set_error_handler(function() {
+            error_log(print_r(debug_backtrace(), true));
+            return true;
+        }, E_USER_NOTICE);
 
   nginx:
     container_name: nau.wordpress.devstack.nginx
